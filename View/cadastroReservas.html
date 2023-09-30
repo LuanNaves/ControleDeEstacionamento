@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro de Reservas</title>
 </head>
 <body>
     <header>
@@ -12,10 +12,12 @@
     <nav>
         <a href="cadastroReservas.html">Cadastrar Reserva</a>
         <a href="listaVagas.html">Lista de Vagas</a>
-        <a href="vagasDisponíiveis.html">Vagas Disponíveis</a>
+        <a href="vagasDisponiveis.html">Vagas Disponíveis</a>
     </nav>
     <form id="cadastroReserva" action="">
         <h2>Cadastrar Reserva</h2>
+        <p>Vagas disponíveis: <span id="vagasDisponiveis"></span></p>
+
         <label for="placa">Placa do Veículo:</label>
         <input type="text" name="placa" id="placa" required>
     
@@ -37,7 +39,7 @@
         <label for="numeroVaga">Número da Vaga:</label>
         <input type="text" name="numeroVaga" id="numeroVaga" required>
     
-        <button type="submit">Salvar</button>
+        <button type="submit">Reservar</button>
     </form>
 </body>
 </html>
