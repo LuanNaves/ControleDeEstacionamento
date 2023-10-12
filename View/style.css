@@ -73,6 +73,28 @@ button[type="submit"] {
     font-weight: bold;
 }
 
+/* Estilos para o botão de desocupar */
+.desocupar-button {
+    float: right; /* Faz com que o botão fique à direita */
+    background-color: #e74c3c; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    border: none; /* Remove a borda */
+    border-radius: 4px; /* Cantos arredondados */
+    padding: 8px 16px; /* Preenchimento interno */
+    cursor: pointer; /* Ícone de cursor de mão ao passar o mouse */
+    margin-left: 5px; /* Espaçamento à esquerda para separá-lo dos outros elementos */
+}
+
+.desocupar-button:hover {
+    background-color: #c0392b; /* Cor de fundo quando o mouse passa por cima */
+}
+
+/* Estilo das informações na lista de reservas */
+.reserva-info {
+    float: left; /* Faz com que as informações fiquem à esquerda */
+    margin-right: 10px; /* Adiciona um espaço à direita das informações */
+}
+
 /* Estilo da lista de reservas */
 ul#reservasList {
     list-style: none;
