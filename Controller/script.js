@@ -1,11 +1,45 @@
 document.addEventListener("DOMContentLoaded", function() {
-
-
     // Iniciando o estacionamento
     const estacionamento = new Estacionamento(20);
 
+    
+    const cadastroSection = document.getElementById("cadastroForm");
+    const listagemSection = document.getElementById("listagemReservas");
+    const vagasSection = document.getElementById("vagasDisponiveis");
+
+    // Inicialmente, exiba a seção de cadastro e oculte as outras
+    cadastroSection.style.display = "block";
+    listagemSection.style.display = "none";
+    vagasSection.style.display = "none";
+
+    const cadastroLink = document.querySelector("nav ul li:nth-child(1) a");
+    const listagemLink = document.querySelector("nav ul li:nth-child(2) a");
+    const vagasLink = document.querySelector("nav ul li:nth-child(3) a");
+
+    cadastroLink.addEventListener("click", function(event) {
+        event.preventDefault();
+        cadastroSection.style.display = "block";
+        listagemSection.style.display = "none";
+        vagasSection.style.display = "none";
+    });
+
+    listagemLink.addEventListener("click", function(event) {
+        event.preventDefault();
+        cadastroSection.style.display = "none";
+        listagemSection.style.display = "block";
+        vagasSection.style.display = "none";
+    });
+
+    vagasLink.addEventListener("click", function(event) {
+        event.preventDefault();
+        cadastroSection.style.display = "none";
+        listagemSection.style.display = "none";
+        vagasSection.style.display = "block";
+    });
+
     preencherListaReservas(estacionamento);
     preencherListaVagas(estacionamento);
+
 
     const cadastro = document.getElementById("cadastroForm");
 
