@@ -2,7 +2,11 @@ document.addEventListener("DOMContentLoaded", function() {
     // Iniciando o estacionamento
     const estacionamento = new Estacionamento(20);
 
-    
+    // Preenchendo dados das listas
+    preencherListaReservas(estacionamento);
+    preencherListaVagas(estacionamento);
+
+    // Definindo variaveis para as páginas
     const cadastroSection = document.getElementById("cadastroForm");
     const listagemSection = document.getElementById("listagemReservas");
     const vagasSection = document.getElementById("vagasDisponiveis");
@@ -16,20 +20,19 @@ document.addEventListener("DOMContentLoaded", function() {
     const listagemLink = document.querySelector("nav ul li:nth-child(2) a");
     const vagasLink = document.querySelector("nav ul li:nth-child(3) a");
 
+    // Adicionando funcionalidade ao menu de navegacao
     cadastroLink.addEventListener("click", function(event) {
         event.preventDefault();
         cadastroSection.style.display = "block";
         listagemSection.style.display = "none";
         vagasSection.style.display = "none";
     });
-
     listagemLink.addEventListener("click", function(event) {
         event.preventDefault();
         cadastroSection.style.display = "none";
         listagemSection.style.display = "block";
         vagasSection.style.display = "none";
     });
-
     vagasLink.addEventListener("click", function(event) {
         event.preventDefault();
         cadastroSection.style.display = "none";
@@ -37,17 +40,10 @@ document.addEventListener("DOMContentLoaded", function() {
         vagasSection.style.display = "block";
     });
 
-    preencherListaReservas(estacionamento);
-    preencherListaVagas(estacionamento);
-
-
     const cadastro = document.getElementById("cadastroForm");
-
+    // Fazer cadastro da reserva
     cadastro.addEventListener('submit', function(event) {
         event.preventDefault();
-
-        console.log(estacionamento);
-        console.log(estacionamento.vagas);
 
         // Capturar os valores do formulário
         const placa = document.getElementById("placa").value;
@@ -60,14 +56,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Criar uma instância da classe Reserva com os valores do formulário
         const reserva = new Reserva(placa, proprietario, numeroApartamento, blocoApartamento, modeloVeiculo, corVeiculo, numeroVaga);
-
-        console.log(reserva);
         
         // Tentar adicionar a reserva ao estacionamento
         const reservaBemSucedida = reserva.fazerReserva(estacionamento);
 
         // Exibir uma mensagem de sucesso ou erro
         if (reservaBemSucedida) {
+            console.log(reserva);
             alert("Reserva bem-sucedida! A vaga foi reservada.");
             preencherListaReservas(estacionamento);
             preencherListaVagas(estacionamento);

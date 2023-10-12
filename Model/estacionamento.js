@@ -15,7 +15,6 @@ class Estacionamento {
 
     ocuparVaga(numeroVaga, reserva) {
         const vaga = this.vagas.find(v => v.numero === numeroVaga);
-        console.log(vaga.numero);
         if (vaga && vaga.status === 'disponivel') {
             vaga.status = 'ocupada';
             vaga.reserva = reserva;

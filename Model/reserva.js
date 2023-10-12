@@ -13,9 +13,6 @@ class Reserva {
         // Verifica se a vaga especificada está disponível no estacionamento
         const vagaDisponivel = estacionamento.vagas.find(vaga => vaga.numero === this.numeroVaga && vaga.status === 'disponivel');
 
-        console.log(vagaDisponivel);
-        console.log(typeof(vagaDisponivel.numero))
-
         if (vagaDisponivel) {
             // Ocupa a vaga no estacionamento
             const reservaBemSucedida = estacionamento.ocuparVaga(this.numeroVaga, this);

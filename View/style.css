@@ -89,7 +89,23 @@ ul#reservasList li {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo das vagas disponíveis */
+/* Estilo da lista de vagas */
+ul#vagasList {
+    list-style: none;
+    padding: 0;
+    margin: 20px;
+}
+
+ul#vagasList li {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo das lista de reservas */
 #listagemReservas {
     max-width: 400px;
     margin: 0 auto;
