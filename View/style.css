@@ -35,6 +35,10 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    text-align: center;
+}
+
 /* Estilo do formulário de cadastro */
 form {
     max-width: 400px;
@@ -83,6 +87,16 @@ ul#reservasList li {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo das vagas disponíveis */
+#listagemReservas {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo das vagas disponíveis */
