@@ -72,10 +72,23 @@ button[type="submit"] {
     cursor: pointer;
     font-weight: bold;
 }
+button[type="submit"]:hover {
+    background-color: #444; /* Cor de fundo quando o mouse passa por cima */
+}
+
+/* Estilo das lista de reservas */
+#listagemReservas {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
 /* Estilos para o botão de desocupar */
 .desocupar-button {
-    float: right; /* Faz com que o botão fique à direita */
+    align-self: center;
     background-color: #e74c3c; /* Cor de fundo */
     color: #fff; /* Cor do texto */
     border: none; /* Remove a borda */
@@ -83,6 +96,7 @@ button[type="submit"] {
     padding: 8px 16px; /* Preenchimento interno */
     cursor: pointer; /* Ícone de cursor de mão ao passar o mouse */
     margin-left: 5px; /* Espaçamento à esquerda para separá-lo dos outros elementos */
+    max-height: 30px;
 }
 
 .desocupar-button:hover {
@@ -91,8 +105,7 @@ button[type="submit"] {
 
 /* Estilo das informações na lista de reservas */
 .reserva-info {
-    float: left; /* Faz com que as informações fiquem à esquerda */
-    margin-right: 10px; /* Adiciona um espaço à direita das informações */
+    margin-right: 10px; /* Adicione um espaço à direita das informações */
 }
 
 /* Estilo da lista de reservas */
@@ -103,38 +116,14 @@ ul#reservasList {
 }
 
 ul#reservasList li {
+    display: flex;
+    justify-content: space-between;
     background-color: #fff;
     margin: 10px 0;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo da lista de vagas */
-ul#vagasList {
-    list-style: none;
-    padding: 0;
-    margin: 20px;
-}
-
-ul#vagasList li {
-    background-color: #fff;
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo das lista de reservas */
-#listagemReservas {
-    max-width: 400px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo das vagas disponíveis */
@@ -145,4 +134,27 @@ ul#vagasList li {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo da lista de vagas */
+ul#vagasList {
+    list-style: none;
+    padding: 0;
+    margin: 20px;
+}
+
+ul#vagasList li {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.vaga-desocupada {
+    background-color: #a2ff7e;
+}
+
+.vaga-ocupada {
+    background-color: #ff8c8c;
 }

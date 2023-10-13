@@ -85,7 +85,11 @@ document.addEventListener('DOMContentLoaded', function() {
             if (vaga.status === 'ocupada') {
                 const reserva = vaga.reserva;
                 const listItem = document.createElement('li');
-                listItem.textContent = `Vaga ${vaga.numero} - Placa: ${reserva.placa} - Proprietário: ${reserva.proprietario} - Apartamento: ${reserva.numeroApartamento} - Bloco: ${reserva.blocoApartamento} - Modelo: ${reserva.modeloVeiculo} - Cor: ${reserva.corVeiculo}`;
+
+                // Criar um elemento para as informações da reserva
+                const infoElement = document.createElement('span');
+                infoElement.textContent = `Vaga ${vaga.numero} - Placa: ${reserva.placa} - Proprietário: ${reserva.proprietario} - Apartamento: ${reserva.numeroApartamento} - Bloco: ${reserva.blocoApartamento} - Modelo: ${reserva.modeloVeiculo} - Cor: ${reserva.corVeiculo}`;
+                infoElement.classList.add('reserva-info');
 
                 // Botão para desocupar a vaga
                 const desocuparButton = document.createElement('button');
@@ -99,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     alert('Vaga desocupada com sucesso!');
                 });
 
+                listItem.appendChild(infoElement);
                 listItem.appendChild(desocuparButton);
                 reservasList.appendChild(listItem);
             }
@@ -116,6 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const listItem = document.createElement('li');
                 const status = vaga.status === 'disponivel' ? 'Disponível' : 'Ocupada';
                 listItem.textContent = `Vaga ${vaga.numero} - ${status}`;
+                listItem.classList.add(vaga.status === 'disponivel' ? 'vaga-desocupada' : 'vaga-ocupada');
                 listaVagas.appendChild(listItem);
             });
         } else {
